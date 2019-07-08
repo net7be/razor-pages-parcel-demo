@@ -32,6 +32,7 @@ And the script include at the end of body:
 ```
 - Add a .gitignore file (see the model included)
 - wwwroot/js, wwwroot/css and wwwroot/lib can be safely removed since we're not using them anymore
+- Add Bootstrap using npm (see next section) and build your entry point, reference the CSS in it
 
 ## Adding Bootstrap
 To keep the base style as it is and for the exercise, we added Bootstrap and JQuery to this example.
@@ -46,3 +47,5 @@ npm install -D bootstrap jquery popper.js
 - [x] Publishing was not configured - Add the static folder in what's to be published.
 - [x] Remove the unused JS libs that are statically downloaded.
 - [x] Test that the source maps are working: we probably need --public-url.
+- [ ] Add Babel with preset env.
+- [ ] Explain how to run and publish the app (same as for the Spring Boot project).
