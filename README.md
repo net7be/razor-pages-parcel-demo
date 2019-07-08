@@ -9,6 +9,23 @@ Other requirements:
 * Node.JS
 * npm package parcel-bundler installed globally
 
+## npm scripts
+To use in development, run:
+```
+npm run dev
+```
+
+To package your app for production:
+```
+npm run build
+```
+Will outout a distributable build to \bin\Debug\netcoreapp2.2\publish.
+
+As we almost never use IIS-based hosting we edited the csproj to use OutOfProcess hosting model as in:
+```xml
+<AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+```
+
 ## How we enabled static assets bundling
 - Initialize a package.json file with `npm init`
 - Install concurrently: `npm install -D concurrently`
@@ -47,5 +64,5 @@ npm install -D bootstrap jquery popper.js
 - [x] Publishing was not configured - Add the static folder in what's to be published.
 - [x] Remove the unused JS libs that are statically downloaded.
 - [x] Test that the source maps are working: we probably need --public-url.
-- [ ] Add Babel with preset env.
-- [ ] Explain how to run and publish the app (same as for the Spring Boot project).
+- [x] Add Babel with preset env. -> Parcel compiles with Babel out of the box.
+- [x] Explain how to run and publish the app (same as for the Spring Boot project).
