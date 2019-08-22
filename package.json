@@ -6,7 +6,8 @@
   "scripts": {
     "watch": "npx parcel watch src/main.js -d wwwroot/assets --public-url /assets",
     "build-assets": "npx parcel build src/main.js -d wwwroot/assets --public-url /assets",
-    "build": "npm run build-assets && dotnet publish",
+    "build": "npm run build-assets && dotnet publish -c Release",
+    "build-linux": "npm run build-assets && dotnet publish -c Release -r debian-x64",
     "dev": "concurrently -k \"npm run watch\" \"dotnet watch run\"",
     "test": "dotnet test"
   },

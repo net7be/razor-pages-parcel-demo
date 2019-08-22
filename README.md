@@ -19,12 +19,18 @@ To package your app for production:
 ```
 npm run build
 ```
-Will outout a distributable build to \bin\Debug\netcoreapp2.2\publish.
+Will output a distributable build to \bin\Release\netcoreapp2.2\publish.
 
 As we almost never use IIS-based hosting we edited the csproj to use OutOfProcess hosting model as in:
 ```xml
 <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
 ```
+
+There is a special script to build a standalone package for a Linux target (doesn't need .NET Core installed to work):
+```
+npm run build-linux
+```
+Build will be in \bin\Release\netcoreapp2.2\debian-x64.
 
 ## How we enabled static assets bundling
 - Initialize a package.json file with `npm init`
